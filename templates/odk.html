@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ikennyooo</title>
+    <!-- 引入 echarts.js 这里使用flask的url_for-->
+    <script src="{{ url_for('static', filename='echarts.min.js') }}"></script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>异常流量检测！！</h1>
+</header>
+
+<section>
+    <form action="/ikk" method="post">
+
+        <h1 >数据输入</h1>
+        <p>
+        <h1>阈值φ</h1>
+        <input type="text" name="frequency">
+        </p>
+
+        <p>
+        <h1>阈值Φ</h1>
+        <input type="text" name="packet">
+        </p>
+        <a href="/ikk">
+            <p>
+                <input type="submit" value="提交数据(●'◡'●)">
+            </p>
+        </a>
+    </form>
+    </divsection>
+
+<style>
+    header {
+        padding:7px;
+
+    }
+
+    section {
+        float:left;
+        padding:5px;
+    }
+</style>
+
+
+</body>
+
+</html>

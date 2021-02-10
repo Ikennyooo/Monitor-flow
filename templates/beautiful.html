@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Ikennyooo</title>
+    <!-- 引入 echarts.js 这里使用flask的url_for-->
+    <script src="{{ url_for('static', filename='echarts.min.js') }}"></script>
+
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+
+
+<h1>ik的寒假作业w</h1>
+<div id="bar" style="width: 700px;height:400px;"></div>
+
+
+<script type="text/javascript">
+    // 基于准备好的dom，初始化echarts实例
+    var barChart = echarts.init(document.getElementById('bar'));
+    // 使用刚指定的配置项和数据显示图表。
+    barChart.setOption({{ bar_options | safe }});
+</script>
+
+<section>
+
+    <div id="right" style="color: cadetblue;width:600px;float:left;">
+        <h1 style="color: black;"> 阈值φ:{{k1}} 阈值Φ:{{k2}} 下的异常流</h1>
+
+        {% for dic in dic1 %}
+
+            {% if dic1[dic] >= k2 or dic2[dic]>= k1 %}
+                {{dic}}<br>
+            {% endif %}
+
+        {% endfor %}
+
+    </div>
+</section>
+
+</body>
+</html>
